@@ -25,7 +25,7 @@ function uniqueWordCount(userText, totalWords) {
 			result.push(userText[i]);
 		}
 	}
-	return result;
+	return result.length;
 }
 
 function avgWordLength(userText, totalWords) {
@@ -73,7 +73,7 @@ function avgWordLength(userText, totalWords) {
 function reportOnText(userText) {
 	var uniqueWord = uniqueWordCount(userText, totalWords);
 	var avgLength = avgWordLength(userText, totalWords);
-	var textReport = ('.js-text-report');
+	var textReport = $('.js-text-report');
 	textReport.find('.js-word-count').text(totalWords);
 	textReport.find('.js-unique-word').text(uniqueWord);
 	textReport.find('.js-avg-length').text(avgLength + " characters");
@@ -82,7 +82,7 @@ function reportOnText(userText) {
 
 // Watch for and handle form submissions
 function watchFormSubmission() {
-  $('.js-text-form').submit(function(event) {
+  $('.js-form').submit(function(event) {
     event.preventDefault();
     // get the text the user submitted
     var userText = $('#user-text').val();
